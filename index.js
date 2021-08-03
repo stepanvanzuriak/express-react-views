@@ -22,7 +22,7 @@ function createEngine(engineOptions) {
   let registered = false;
   let moduleDetectRegEx;
 
-  engineOptions = assign({}, DEFAULT_OPTIONS, engineOptions || {});
+  engineOptions = {...DEFAULT_OPTIONS, ...(engineOptions || {})};
 
   function renderFile(filename, options, cb) {
     // Defer babel registration until the first request so we can grab the view path.
