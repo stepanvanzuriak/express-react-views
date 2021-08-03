@@ -11,11 +11,13 @@ const React = require('react');
 const ReactDOMServer = require('react-dom/server');
 const beautifyHTML = require('js-beautify').html;
 const _escaperegexp = require('lodash.escaperegexp');
+const babelConfig = require('./.babelrc.json');
 
 const DEFAULT_OPTIONS = {
   doctype: '<!DOCTYPE html>',
   beautify: false,
   transformViews: true,
+  babel: babelConfig,
 };
 
 function createEngine(engineOptions) {
@@ -40,7 +42,10 @@ function createEngine(engineOptions) {
     if (engineOptions.transformViews && !registered) {
       // Passing a RegExp to Babel results in an issue on Windows so we'll just
       // pass the view path.
-      require('@babel/register')({only: [].concat(options.settings.views)});
+      require('@babel/register')({
+        only: [].concat(options.settings.views),
+        ...engineOptions.babel,
+      });
       registered = true;
     }
 

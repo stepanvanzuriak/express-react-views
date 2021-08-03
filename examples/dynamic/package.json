@@ -14,7 +14,7 @@
     "browserify": "^14.3.0",
     "express": "^4.15.3",
     "express-react-views": "file:../../",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

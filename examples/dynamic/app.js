@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
     items: [
       'document your code',
       'drop the kids off at the pool',
-      '</script><script>alert(666)</script>',
+      '</script><script>alert("xss")</script>',
     ],
     text: '',
   };
