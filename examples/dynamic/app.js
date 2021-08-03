@@ -8,7 +8,7 @@ app.engine('js', reactViews.createEngine());
 
 app.use(express.static(__dirname + '/public'));
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   var initialState = {
     items: [
       'document your code',
@@ -21,6 +21,6 @@ app.get('/', function(req, res) {
 });
 
 var port = process.env.PORT || 3000;
-app.listen(port, function() {
+app.listen(port, function () {
   console.log('Dynamic react example listening on port ' + port);
 });

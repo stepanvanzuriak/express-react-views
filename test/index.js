@@ -10,7 +10,7 @@ var viewOptions = {
 
 function testComponent(path, cb) {
   var render = viewEngine.createEngine();
-  render(path, viewOptions, function(err, source) {
+  render(path, viewOptions, function (err, source) {
     assert(!err, `Rendering ${path}: Did not throw`);
     assert.equal(
       source,
